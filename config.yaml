@@ -1,0 +1,31 @@
+# fullsend organization configuration
+# https://github.com/fullsend-ai/fullsend
+#
+# This file is managed by fullsend. Manual edits may be overwritten.
+version: "1"
+dispatch:
+    platform: github-actions
+defaults:
+    roles:
+        - fullsend
+        - triage
+        - coder
+        - review
+    max_implementation_retries: 2
+    auto_merge: false
+agents:
+    - role: fullsend
+      name: ralphflux-fullsend
+      slug: ralphflux-fullsend
+    - role: triage
+      name: ralphflux-triage
+      slug: ralphflux-triage
+    - role: coder
+      name: ralphflux-coder
+      slug: ralphflux-coder
+    - role: review
+      name: ralphflux-review
+      slug: ralphflux-review
+repos:
+    test-repo:
+        enabled: true
